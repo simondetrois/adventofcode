@@ -1,14 +1,13 @@
-package _2024._01.one
+package _2024._01
 
+import _2024.common.getLinesOfFile
 import java.io.File
 
 fun main() {
 
-    val input = File("_2024/_01/one/inputnput")
-        .useLines { it.toList() }
-        .map {
-            it.substring(0, 5).toInt() to it.substring(8, 13).toInt()
-        }
+    val input = getLinesOfFile("_2024/_01/input")
+        .map { getBothNumbers(it) }
+
 
     val firstList = input.map { it.first }.sorted()
     val secondList = input.map { it.second }.sorted()
